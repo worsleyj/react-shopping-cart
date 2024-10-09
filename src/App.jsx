@@ -1,6 +1,5 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Nav from "./Nav";
 import "./App.css";
 
 function App() {
@@ -8,6 +7,7 @@ function App() {
 
   return (
     <>
+      <Nav />
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates
         impedit pariatur et unde error expedita voluptatem, at amet consequuntur
