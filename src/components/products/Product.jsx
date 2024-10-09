@@ -1,4 +1,4 @@
-import Nav from "./Nav";
+import Nav from "../Nav";
 import { Outlet, Link } from "react-router-dom";
 
 const Product = () => {

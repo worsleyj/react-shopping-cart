@@ -1,12 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.jsx";
-import Product from "./Product.jsx";
-import Pants from "./Pants.jsx";
-import Shirt from "./Shirt.jsx";
-import "./index.css";
-import DefaultProduct from "./DefaultProduct.jsx";
+import App from "./components/App.jsx";
+import Product from "./components/products/Product.jsx";
+import Pants from "./components/products/Pants.jsx";
+import Shirt from "./components/products/Shirt.jsx";
+import "./styles/index.css";
+import DefaultProduct from "./components/products/DefaultProduct.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
