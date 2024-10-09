@@ -1,15 +1,15 @@
 import Nav from "../Nav";
-import { Outlet, Link, useParams } from "react-router-dom";
-import DefaultProduct from "./DefaultProduct";
+import { Link, useParams } from "react-router-dom";
 import Shirt from "./Shirt";
 import Pants from "./Pants";
+import DefaultProduct from "./DefaultProduct";
 
 const Product = () => {
   const { name } = useParams();
   return (
     <>
       <Nav />
-      <h1>Product Page!!! Very nice!</h1>
+      <h1>Products!! Very nice!</h1>
       {name === "pants" ? (
         <Pants />
       ) : name === "shirt" ? (
@@ -17,9 +17,9 @@ const Product = () => {
       ) : (
         <DefaultProduct />
       )}
-      <Link to="pants">Pants</Link>
+      <Link to="../product/pants">Pants</Link>
       <br></br>
-      <Link to="shirt">Shirt</Link>
+      <Link to="../product/shirt">Shirt</Link>
     </>
   );
 };
