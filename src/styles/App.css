@@ -3,3 +3,21 @@
   border-radius: 12px;
   padding: 8px 24px;
 }
+
+.product-card-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-to-cart-btn {
+  height: 35px;
+  border-radius: 12px;
+}
+
+.card-grid {
+  padding: 24px;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  gap: 12px;
+}

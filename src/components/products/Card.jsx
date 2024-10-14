@@ -11,7 +11,15 @@ const Card = ({ name }) => {
         minus aut consectetur enim reiciendis, quas neque molestiae corrupti
         eveniet.
       </p>
-      <h2>$10.00</h2>
+      <div className="product-card-footer">
+        <h2>$10.00</h2>
+        <div className="quantity-input">
+          <input type="number"></input>
+          <button>+</button>
+          <button>-</button>
+        </div>
+        <buttoN className="add-to-cart-btn">add to cart</buttoN>
+      </div>
     </div>
   );
 };

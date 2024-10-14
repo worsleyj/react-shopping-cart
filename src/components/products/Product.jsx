@@ -18,9 +18,11 @@ const Product = () => {
       ) : (
         <DefaultProduct />
       )}
-      <Card name={"pants"} />
-      <Card name={"shirt"} />
-      <Card name={"hat"} />
+      <div className="card-grid">
+        <Card name={"pants"} />
+        <Card name={"shirt"} />
+        <Card name={"hat"} />
+      </div>
     </>
   );
 };
