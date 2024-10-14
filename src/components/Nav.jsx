@@ -10,7 +10,10 @@ const Nav = () => {
       <nav>
         <Link to="/">Home</Link>
         <Link to="product/default">Product</Link>
-        <div>{cartQuantity}</div>
+        <div>
+          <button className="checkout-button">Checkout</button>
+          <div>{cartQuantity}</div>
+        </div>
       </nav>
     </>
   );
