@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Card = ({ name }) => {
+const Card = ({ name, cartQuantity, setCartQuantity }) => {
   return (
     <div className="product-card">
       <h1>{name}</h1>
@@ -18,7 +18,15 @@ const Card = ({ name }) => {
           <button>+</button>
           <button>-</button>
         </div>
-        <buttoN className="add-to-cart-btn">add to cart</buttoN>
+        <button
+          onClick={() => {
+            setCartQuantity(cartQuantity + 1);
+            //reset card quant
+            console.log("TEST");
+          }}
+        >
+          add to cart
+        </button>
       </div>
     </div>
   );

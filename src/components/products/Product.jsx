@@ -1,15 +1,17 @@
 import Nav from "../Nav";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 import Card from "./Card";
 import Shirt from "./Shirt";
 import Pants from "./Pants";
 import DefaultProduct from "./DefaultProduct";
 
 const Product = () => {
+  const [cartQuantity, setCartQuantity] = useState(0);
   const { name } = useParams();
   return (
     <>
-      <Nav />
+      <Nav cartQuantity={cartQuantity} />
       <h1>Products!! Very nice!</h1>
       {name === "pants" ? (
         <Pants />
@@ -19,9 +21,21 @@ const Product = () => {
         <DefaultProduct />
       )}
       <div className="card-grid">
-        <Card name={"pants"} />
-        <Card name={"shirt"} />
-        <Card name={"hat"} />
+        <Card
+          name={"pants"}
+          cartQuantity={cartQuantity}
+          setCartQuantity={setCartQuantity}
+        />
+        <Card
+          name={"shirt"}
+          cartQuantity={cartQuantity}
+          setCartQuantity={setCartQuantity}
+        />
+        <Card
+          name={"hat"}
+          cartQuantity={cartQuantity}
+          setCartQuantity={setCartQuantity}
+        />
       </div>
     </>
   );

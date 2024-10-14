@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../styles/Nav.css";
 
-const Nav = () => {
-  const [cartQuantity, setCartQuantity] = useState(0);
-
+const Nav = ({ cartQuantity }) => {
   return (
     <>
       <nav>
