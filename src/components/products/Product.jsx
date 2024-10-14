@@ -1,5 +1,6 @@
 import Nav from "../Nav";
 import { Link, useParams } from "react-router-dom";
+import Card from "./Card";
 import Shirt from "./Shirt";
 import Pants from "./Pants";
 import DefaultProduct from "./DefaultProduct";
@@ -17,9 +18,9 @@ const Product = () => {
       ) : (
         <DefaultProduct />
       )}
-      <Link to="../product/pants">Pants</Link>
-      <br></br>
-      <Link to="../product/shirt">Shirt</Link>
+      <Card name={"pants"} />
+      <Card name={"shirt"} />
+      <Card name={"hat"} />
     </>
   );
 };

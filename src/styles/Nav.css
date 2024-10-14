@@ -1,6 +1,13 @@
 nav {
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 36px;
+  background-color: slategray;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
 }
 
 a {
