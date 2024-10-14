@@ -11,7 +11,7 @@ const Product = () => {
   const { name } = useParams();
   return (
     <>
-      <Nav cartQuantity={cartQuantity} />
+      <Nav cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
       <h1>Products!! Very nice!</h1>
       {name === "pants" ? (
         <Pants />
