@@ -1,6 +1,6 @@
 import Nav from "../Nav";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "./Card";
 import Shirt from "./Shirt";
 import Pants from "./Pants";
@@ -9,6 +9,17 @@ import DefaultProduct from "./DefaultProduct";
 const Product = () => {
   const [cartQuantity, setCartQuantity] = useState(0);
   const { name } = useParams();
+
+  useEffect(() => {
+    async function fetchProducts() {
+      let data = await fetch("https://fakestoreapi.com/products/");
+      let products = await data.json();
+      console.log(products);
+    }
+    fetchProducts();
+    return () => {};
+  }, []);
+
   return (
     <>
       <Nav cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
