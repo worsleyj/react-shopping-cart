@@ -8,7 +8,7 @@ const routes = [
     element: <App />,
     errorElement: <ErrorPage />,
   },
-  { path: "product/:name", element: <Product /> },
+  { path: "/products", element: <Product /> },
 ];
 
 export default routes;

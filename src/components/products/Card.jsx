@@ -14,7 +14,6 @@ const Card = ({ productNumber, cartQuantity, setCartQuantity }) => {
 
       setProduct(x);
     }
-
     fetchProducts();
   }, []);
 

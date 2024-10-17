@@ -6,7 +6,7 @@ const Nav = ({ cartQuantity, setCartQuantity }) => {
     <>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="product/default">Product</Link>
+        <Link to="products">Product</Link>
         <div>
           <button
             className="checkout-button"
