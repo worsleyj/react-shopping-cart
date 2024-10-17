@@ -4,13 +4,18 @@ import Card from "./Card";
 
 const Product = () => {
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [cartPrice, setCartPrice] = useState(0);
   let cardArray = [];
   generateCards();
   shuffleArray(cardArray);
   return (
     <>
-      <Nav cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
-      <h1>Products!! Very nice!</h1>
+      <Nav
+        cartQuantity={cartQuantity}
+        setCartQuantity={setCartQuantity}
+        cartPrice={cartPrice}
+      />
+      <h1 className="store-header">Very nice products, they are for sale</h1>
       <div className="card-grid">{cardArray}</div>
     </>
   );
@@ -33,6 +38,8 @@ const Product = () => {
           productNumber={i}
           cartQuantity={cartQuantity}
           setCartQuantity={setCartQuantity}
+          cartPrice={cartPrice}
+          setCartPrice={setCartPrice}
         />
       );
     }

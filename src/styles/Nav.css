@@ -4,10 +4,10 @@ nav {
   align-items: center;
   gap: 36px;
   background-color: slategray;
-  position: absolute;
   text-align: center;
-  top: 0;
   width: 100%;
+  position: absolute;
+  top: 0;
 }
 
 a {
@@ -15,7 +15,7 @@ a {
 }
 
 a:visited {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .checkout-button {
@@ -23,4 +23,9 @@ a:visited {
   border-radius: 10px;
   padding: 6px;
   margin: 4px;
+}
+
+.cart-info {
+  display: flex;
+  justify-content: space-evenly;
 }

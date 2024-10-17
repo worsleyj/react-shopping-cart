@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Card = ({ productNumber, cartQuantity, setCartQuantity }) => {
+const Card = ({
+  productNumber,
+  cartQuantity,
+  setCartQuantity,
+  cartPrice,
+  setCartPrice,
+}) => {
   const [quantity, setQuantity] = useState(0);
   const [product, setProduct] = useState("Product");
 
@@ -29,6 +35,7 @@ const Card = ({ productNumber, cartQuantity, setCartQuantity }) => {
         <h2>{"$" + product.price}</h2>
         <div className="quantity-input">
           <input
+            id={productNumber}
             type="number"
             value={quantity}
             onChange={(event) => setQuantity(event.target.value)}
@@ -54,6 +61,7 @@ const Card = ({ productNumber, cartQuantity, setCartQuantity }) => {
           onClick={() => {
             if (quantity > 0) {
               setCartQuantity(cartQuantity + parseInt(quantity));
+              setCartPrice(product.price * cartQuantity + cartPrice);
             }
             setQuantity(0);
           }}

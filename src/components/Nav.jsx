@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import "../styles/Nav.css";
 
-const Nav = ({ cartQuantity, setCartQuantity }) => {
+const Nav = ({ cartQuantity, cartPrice }) => {
   return (
     <>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="products">Product</Link>
+        <Link to="products">Store</Link>
         <div>
           <button
             className="checkout-button"
@@ -21,7 +21,10 @@ const Nav = ({ cartQuantity, setCartQuantity }) => {
           >
             Checkout
           </button>
-          <div>{cartQuantity}</div>
+          <div className="cart-info">
+            <div>{"$" + cartPrice + "~"}</div>
+            <div>{cartQuantity + " items"}</div>
+          </div>
         </div>
       </nav>
     </>
