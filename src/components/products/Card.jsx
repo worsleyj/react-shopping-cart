@@ -1,20 +1,33 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Card = ({ name, cartQuantity, setCartQuantity }) => {
+const Card = ({ productNumber, cartQuantity, setCartQuantity }) => {
   const [quantity, setQuantity] = useState(0);
+  const [product, setProduct] = useState("Product");
+
+  useEffect(() => {
+    async function fetchProducts() {
+      let data = await fetch(
+        "https://fakestoreapi.com/products/" + productNumber
+      );
+      let x = await data.json();
+
+      setProduct(x);
+    }
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="product-card">
-      <h1>{name}</h1>
-      <Link to={"../product/" + name}>{name}</Link>
-      <p>
-        {name} ipsum dolor sit, amet consectetur adipisicing elit. Quo, mollitia
-        saepe tempora rerum molestias ex excepturi ad nostrum, cupiditate libero
-        minus aut consectetur enim reiciendis, quas neque molestiae corrupti
-        eveniet.
-      </p>
+      <h1>{product.title}</h1>
+      <Link to={"../product/" + product.title}>
+        <img src={product.image} height="250px"></img>
+        {product.title}
+      </Link>
+      <p>{product.description}</p>
       <div className="product-card-footer">
-        <h2>$10.00</h2>
+        <h2>{"$" + product.price}</h2>
         <div className="quantity-input">
           <input
             type="number"

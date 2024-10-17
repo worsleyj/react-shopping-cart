@@ -8,18 +8,10 @@ import DefaultProduct from "./DefaultProduct";
 
 const Product = () => {
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [products, setProducts] = useState([]);
   const { name } = useParams();
-
-  useEffect(() => {
-    async function fetchProducts() {
-      let data = await fetch("https://fakestoreapi.com/products/");
-      let products = await data.json();
-      console.log(products);
-    }
-    fetchProducts();
-    return () => {};
-  }, []);
-
+  let cardArray = [];
+  generateCards();
   return (
     <>
       <Nav cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
@@ -32,24 +24,44 @@ const Product = () => {
         <DefaultProduct />
       )}
       <div className="card-grid">
-        <Card
-          name={"pants"}
+        {cardArray}
+        {/* <Card
+          product={product}
           cartQuantity={cartQuantity}
           setCartQuantity={setCartQuantity}
         />
         <Card
-          name={"shirt"}
+          product={product}
           cartQuantity={cartQuantity}
           setCartQuantity={setCartQuantity}
         />
         <Card
-          name={"hat"}
+          product={product}
           cartQuantity={cartQuantity}
           setCartQuantity={setCartQuantity}
-        />
+        /> */}
       </div>
     </>
   );
+  function generateCards() {
+    cardArray = [];
+    let i = 0;
+    while (i < 2) {
+      i++;
+      console.log(i);
+      console.log("lenth" + products);
+
+      cardArray.push(
+        <Card
+          key={i}
+          productNumber={i}
+          cartQuantity={cartQuantity}
+          setCartQuantity={setCartQuantity}
+        />
+      );
+      console.log(cardArray);
+    }
+  }
 };
 
 export default Product;
