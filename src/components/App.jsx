@@ -9,6 +9,7 @@ function App() {
     <>
       <h1 className="home-header">FakeStore!</h1>
       <nav>
+        <h2>FakeStore</h2>
         <Link to="/">Home</Link>
         <Link to="products">Store</Link>
       </nav>

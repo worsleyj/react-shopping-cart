@@ -5,6 +5,8 @@ const Nav = ({ cartQuantity, setCartQuantity, cartPrice, setCartPrice }) => {
   return (
     <>
       <nav>
+        <h2>FakeStore</h2>
+
         <Link to="/">Home</Link>
         <Link to="products">Store</Link>
         <div>
