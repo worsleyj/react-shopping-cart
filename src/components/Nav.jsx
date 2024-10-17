@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/Nav.css";
 
-const Nav = ({ cartQuantity, cartPrice }) => {
+const Nav = ({ cartQuantity, setCartQuantity, cartPrice, setCartPrice }) => {
   return (
     <>
       <nav>
@@ -12,8 +12,14 @@ const Nav = ({ cartQuantity, cartPrice }) => {
             className="checkout-button"
             onClick={() => {
               if (cartQuantity > 0) {
-                alert("You checked out your " + cartQuantity + " items!");
+                alert(
+                  "Thank you for shopping, you checked out " +
+                    cartQuantity +
+                    " items for a total of: $" +
+                    cartPrice
+                );
                 setCartQuantity(0);
+                setCartPrice(0);
               } else {
                 alert("Your cart is empty! Add some items and try again.");
               }

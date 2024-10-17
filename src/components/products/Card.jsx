@@ -60,8 +60,17 @@ const Card = ({
         <button
           onClick={() => {
             if (quantity > 0) {
+              console.log(
+                "added: " +
+                  cartPrice +
+                  " + " +
+                  product.price +
+                  " * " +
+                  cartQuantity
+              );
+
               setCartQuantity(cartQuantity + parseInt(quantity));
-              setCartPrice(product.price * cartQuantity + cartPrice);
+              setCartPrice(cartPrice + product.price * parseInt(quantity));
             }
             setQuantity(0);
           }}

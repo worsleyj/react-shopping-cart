@@ -8,12 +8,14 @@ const Product = () => {
   let cardArray = [];
   generateCards();
   shuffleArray(cardArray);
+
   return (
     <>
       <Nav
         cartQuantity={cartQuantity}
         setCartQuantity={setCartQuantity}
         cartPrice={cartPrice}
+        setCartPrice={setCartPrice}
       />
       <h1 className="store-header">Very nice products, they are for sale</h1>
       <div className="card-grid">{cardArray}</div>
@@ -28,7 +30,6 @@ const Product = () => {
     }
   }
   function generateCards() {
-    cardArray = [];
     let i = 0;
     while (i < 20) {
       i++;
