@@ -26,10 +26,7 @@ const Card = ({
   return (
     <div className="product-card">
       <h1>{product.title}</h1>
-      <Link to={"../product/" + product.title}>
-        <img src={product.image} height="250px"></img>
-        {product.title}
-      </Link>
+      <img src={product.image} height="250px"></img>
       <p>{product.description}</p>
       <div className="product-card-footer">
         <h2>{"$" + product.price}</h2>

@@ -1,3 +1,7 @@
+img {
+  border-radius: 6px;
+}
+
 .product-card {
   border: solid 1px white;
   border-radius: 12px;
@@ -28,6 +32,26 @@
   top: 35px;
 }
 
+.home-header {
+  font-size: 128px;
+  font-weight: 1000;
+  text-align: center;
+}
+
+.home-images {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.home-desc {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 36px;
+  text-align: center;
+  border: solid 1px white;
+  border-radius: 12px;
+  margin: 24px 18px;
+}
 /* remove arrows from number input */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
