@@ -52,7 +52,6 @@ img {
   border-radius: 12px;
   margin: 24px 18px;
 }
-/* remove arrows from number input */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
